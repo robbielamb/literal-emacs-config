@@ -346,6 +346,7 @@ Turn it on for every programming mode.
    #+END_SRC
 
 * Environment
+** On Macs
   OSX needs special help setting environment variables when launched
   from finder.
 
@@ -354,6 +355,28 @@ Turn it on for every programming mode.
     (when (memq window-system '(mac ns))
       (exec-path-from-shell-initialize)
       (exec-path-from-shell-copy-env "GOPATH"))
+  #+END_SRC
+
+** Emacs Server
+I like starting up an emacs process, then opening files with emacs
+client.
+
+  #+name: environment
+  #+BEGIN_SRC emacs-lisp
+    (server-start)
+  #+END_SRC
+
+For my shells I add the following. 'ec' allows me to open up files on
+the command line for editing. Setting $EDITOR to 'emacsclient'
+defaults most cli programs to open up text in emacs then wait for the
+response. The $ALTERNATE_EDITOR is set so emacs launches when it's not
+already running.
+
+  #+BEGIN_SRC sh
+    alias ec='emacsclient --no-wait'
+
+    export EDITOR=emacsclient
+    export ALTERNATE_EDITOR=emacs
   #+END_SRC
 
 * Configuration File Layout

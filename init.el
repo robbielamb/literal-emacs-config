@@ -28,5 +28,3 @@
 ;;(add-to-list 'load-path "~/Projects/go/misc/emacs" t)
 ;;(require 'go-mode-load)
 (setq gofmt-command "goimports")
-
-(server-start)
