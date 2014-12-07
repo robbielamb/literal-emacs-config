@@ -57,6 +57,7 @@
 (depends-on "python-pylint")
 (depends-on "queue")
 (depends-on "rainbow-delimiters")
+(depends-on "rainbow-identifiers")
 (depends-on "rainbow-mode")
 (depends-on "ruby-block")
 (depends-on "ruby-end")

@@ -155,7 +155,9 @@ Turn it on for every programming mode.
 
  #+name: programming-setup
  #+BEGIN_SRC emacs-lisp
-  (add-hook 'prog-mode-hook #'rainbow-delimiters-mode)
+  (add-hook 'prog-mode-hook (lambda () 
+                              (rainbow-delimiters-mode)
+                              (rainbow-identifiers-mode)))
  #+END_SRC
 
 ** Go Lang
