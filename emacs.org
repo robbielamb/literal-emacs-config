@@ -338,6 +338,13 @@ Turn it on for every programming mode.
   OSX needs special help setting environment variables when launched
   from finder.
 
+  #+name: environment
+  #+BEGIN_SRC emacs-lisp
+    (when (memq window-system '(mac ns))
+      (exec-path-from-shell-initialize)
+      (exec-path-from-shell-copy-env "GOPATH"))
+  #+END_SRC
+
 * Configuration File Layout
   I'm not sure what this does. Lets try and find out.
 

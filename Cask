@@ -17,6 +17,7 @@
 (depends-on "dash")
 (depends-on "elisp-slime-nav")
 (depends-on "epl")
+(depends-on "exec-path-from-shell")
 (depends-on "f")
 (depends-on "find-file-in-project")
 (depends-on "flycheck")
