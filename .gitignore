@@ -1,0 +1,16 @@
+.cask
+.org-id-locations
+.smex-items
+*#
+*~
+abbrev_defs
+auto-save-list
+backups
+custom.el
+emacs.el
+emacs.pdf
+emacs.tex
+emacs.html
+places
+session*
+url
