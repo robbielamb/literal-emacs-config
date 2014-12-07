@@ -115,6 +115,15 @@ Start with the scratch buffer. No startup screen.
    #+END_SRC
 
 * Formatting Text
+
+** Spell Checking
+Enable spell checking while editing test files using [[http://www.emacswiki.org/FlySpell][FlySpell]]
+
+#+name: formatting
+#+BEGIN_SRC emacs-lisp
+    (add-hook 'text-mode-hook 'turn-on-flyspell)
+#+END_SRC
+
 * Programming
 ** General Settings
 There are several items we want for every program mode.
