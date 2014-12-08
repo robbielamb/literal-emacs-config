@@ -160,10 +160,41 @@ Turn it on for every programming mode.
                               (rainbow-identifiers-mode)))
  #+END_SRC
 
-** Go Lang
+*** Yasnippits
+Turn on yasnippets everywhere.
+
+#+name: programming-setup
+#+BEGIN_SRC emacs-lisp
+  (yas-global-mode 1)
+#+END_SRC
+
+** Go Programming Language
+Configuration for the go language.
+
+#+name: programming-setup
+#+BEGIN_SRC emacs-lisp
+(setq gofmt-command "goimports")
+(add-hook 'before-save-hook 'gofmt-before-save)
+(add-hook 'go-mode-hook (lambda ()
+                          (go-eldoc-setup)
+                          (yas-minor-mode)
+                          (set (make-local-variable 'company-backends) '(company-go))
+                          (company-mode)))
+#+END_SRC
+
+Oracle mode is pretty nice for looking at go code.
+#+name: programming-setup
+#+BEGIN_SRC emacs-lisp
+  (load-file "$GOPATH/src/code.google.com/p/go.tools/cmd/oracle/oracle.el")
+  (go-oracle-mode)
+#+END_SRC
+
 ** Javascript
 ** HTML
 * Auto Complete with Company
+[[https://company-mode.github.io/][Company Mode]] is a pretty good fast auto-complete package with support
+for many languages. It's currently only enabled in the 'Go Config'
+
 * Key Bindings
 
 * Org Mode
