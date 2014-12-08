@@ -35,13 +35,17 @@
 
 ** Font
    I generally like the [[http://www.levien.com/type/myfonts/inconsolata.html][Inconsolata]] and I haven't had noticeable
-   problems wiht it.
+   problems with it.
+   
+   Though on Macs I kind of like Menlo. We'll have to try that out one
+   of these days.
 
    #+name: look-and-feel
    #+BEGIN_SRC emacs-lisp
+       ;; Think about menlo.
        (set-face-attribute 'default nil
                            :family "Inconsolata"
-                           :height 130
+                           :height 160
                            :weight 'normal
                            :width 'normal)
    #+END_SRC
