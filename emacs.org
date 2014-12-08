@@ -8,13 +8,17 @@
 
 * How to use
 ** Obtaining the source
+This is currently hidden away on my private git repository.
 
-** Installation
-
-** Procedure
+** Installation Procedure
+- Install Emacs 24
+- Install Cask from [[https://github.com/cask/cask]]
+- Clone this repo into $HOME/.emacs.d
+- Run cask install in $HOME/.emacs.d
+- Start Emacs
 
 ** Issues
-
+None, this should be perfect *smile*.
 * Graphics
 ** Color Theme
    I really like the solarized theme. Lets start with that one
