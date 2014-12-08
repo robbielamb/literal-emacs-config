@@ -30,6 +30,7 @@
    #+name: look-and-feel
    #+BEGIN_SRC emacs-lisp
       (nyan-mode +1)
+      (nyan-start-animation)
    #+END_SRC
 
 ** Font
@@ -114,8 +115,14 @@ Start with the scratch buffer. No startup screen.
       (setq inhibit-startup-screen +1)
    #+END_SRC
 
-* Formatting Text
+Undo Tree is really nice to have turned on all the time.
 
+   #+name: startup
+   #+BEGIN_SRC emacs-lisp
+     (global-undo-tree-mode)
+   #+END_SRC
+
+* Formatting Text
 ** Spell Checking
 Enable spell checking while editing test files using [[http://www.emacswiki.org/FlySpell][FlySpell]]
 
