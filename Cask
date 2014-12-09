@@ -1,7 +1,6 @@
 (source gnu)
 (source melpa)
 
-(depends-on "auto-complete")
 (depends-on "cask")
 (depends-on "cl-lib")
 (depends-on "clojure-mode")
