@@ -205,6 +205,13 @@ Oracle mode is pretty nice for looking at go code.
 #+END_SRC
 
 ** Javascript
+js2-mode is the best javascript mode.
+
+#+name: programming-setup
+#+BEGIN_SRC emacs-lisp
+  (add-to-list 'auto-mode-alist '("\\.js[x]?\\'" . js2-mode))
+  (setq js2-highlight-level 3)
+#+END_SRC
 ** HTML
 * Auto Complete with Company
 [[https://company-mode.github.io/][Company Mode]] is a pretty good fast auto-complete package with support
