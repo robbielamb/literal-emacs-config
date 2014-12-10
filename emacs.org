@@ -41,17 +41,22 @@ None, this should be perfect *smile*.
    I generally like the [[http://www.levien.com/type/myfonts/inconsolata.html][Inconsolata]] and I haven't had noticeable
    problems with it.
    
-   Though on Macs I kind of like Menlo. We'll have to try that out one
-   of these days.
+   Though on Macs I kind of like Menlo. 
+
+   Select Menlo on a Mac and Inconsolata in other places.
 
    #+name: look-and-feel
    #+BEGIN_SRC emacs-lisp
        ;; Think about menlo.
-       (set-face-attribute 'default nil
-                           :family "Inconsolata"
-                           :height 160
-                           :weight 'normal
-                           :width 'normal)
+   (defun my/set-font (my-font-face)
+      (set-face-attribute 'default nil
+                          :family my-font-face
+                          :height 140
+                          :weight 'normal
+                          :width  'normal ))
+    (if (memq window-system '(mac ns))
+        (my/set-font "Menlo")
+        (my/set-font "Inconsolata"))
    #+END_SRC
    
 ** Remove clutter
@@ -172,7 +177,8 @@ Turn it on for every programming mode.
  #+BEGIN_SRC emacs-lisp
   (add-hook 'prog-mode-hook (lambda () 
                               (rainbow-delimiters-mode)
-                              (rainbow-identifiers-mode)))
+                              ;;(rainbow-identifiers-mode)
+))
  #+END_SRC
 
 *** Yasnippits
