@@ -6,6 +6,8 @@
   There was an article on hacker news a week or so ago about a literal
   emacs config file. This is my attempt at recreating it.
 
+  This file should closely mirror information at [[http://zeekat.nl/articles/making-emacs-work-for-me.html]]
+
 * How to use
 ** Obtaining the source
 This is currently hidden away on my private git repository.

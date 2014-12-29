@@ -19,12 +19,3 @@
 
 (org-babel-load-file "~/.emacs.d/emacs.org")
 
-
-;; Always undo tree
-(require 'undo-tree)
-(global-undo-tree-mode)
-
-;; Include go mode!
-;;(add-to-list 'load-path "~/Projects/go/misc/emacs" t)
-;;(require 'go-mode-load)
-(setq gofmt-command "goimports")
