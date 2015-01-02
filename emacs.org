@@ -179,7 +179,7 @@ Turn it on for every programming mode.
  #+BEGIN_SRC emacs-lisp
   (add-hook 'prog-mode-hook (lambda () 
                               (rainbow-delimiters-mode)
-                              ;;(rainbow-identifiers-mode)
+                              (rainbow-identifiers-mode)
 ))
  #+END_SRC
 
@@ -220,6 +220,11 @@ js2-mode is the best javascript mode.
   (add-to-list 'auto-mode-alist '("\\.js[x]?\\'" . js2-mode))
   (setq js2-highlight-level 3)
 #+END_SRC
+
+We also want magical flychecking to happen.
+
+[[http://lbolla.info/blog/2014/11/19/flycheck-checker-for-javascript-flow][Flycheck emacs integration]]
+
 ** HTML
 * Auto Complete with Company
 [[https://company-mode.github.io/][Company Mode]] is a pretty good fast auto-complete package with support
