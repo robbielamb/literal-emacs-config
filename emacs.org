@@ -208,7 +208,7 @@ Configuration for the go language.
 Oracle mode is pretty nice for looking at go code.
 #+name: programming-setup
 #+BEGIN_SRC emacs-lisp
-  (load-file "$GOPATH/src/code.google.com/p/go.tools/cmd/oracle/oracle.el")
+  (load-file "$GOPATH/src/golang.org/x/tools/cmd/oracle/oracle.el")
   (go-oracle-mode)
 #+END_SRC
 
