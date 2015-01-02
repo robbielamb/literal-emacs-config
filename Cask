@@ -75,6 +75,7 @@
 (depends-on "starter-kit-bindings")
 (depends-on "toml-mode")
 (depends-on "undo-tree")
+(depends-on "yaml-mode")
 (depends-on "yas-jit")
 (depends-on "yascroll")
 (depends-on "yasnippet")
