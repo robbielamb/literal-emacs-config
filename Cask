@@ -4,7 +4,6 @@
 (depends-on "cask")
 (depends-on "cl-lib")
 (depends-on "clojure-mode")
-(depends-on "coffee-mode")
 (depends-on "color-theme")
 (depends-on "color-theme-solarized")
 (depends-on "command-frequency")
