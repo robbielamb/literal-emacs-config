@@ -1,6 +1,7 @@
 (source gnu)
 (source melpa)
 
+(depends-on "auto-complete")
 (depends-on "cask")
 (depends-on "cl-lib")
 (depends-on "clojure-mode")
@@ -30,6 +31,7 @@
 (depends-on "go-eldoc")
 (depends-on "go-mode")
 (depends-on "haml-mode")
+(depends-on "haskell-mode")
 (depends-on "idle-highlight-mode")
 (depends-on "ido-ubiquitous")
 (depends-on "inf-ruby")
@@ -71,7 +73,6 @@
 (depends-on "smex")
 (depends-on "ssh-config-mode")
 (depends-on "starter-kit")
-(depends-on "starter-kit-bindings")
 (depends-on "toml-mode")
 (depends-on "undo-tree")
 (depends-on "yaml-mode")

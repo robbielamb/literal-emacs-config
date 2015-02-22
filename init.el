@@ -1,5 +1,5 @@
 (if (file-exists-p "~/.cask/cask.el")
-    (require 'cask "~/.cask/cask.el") 
+    (require 'cask "~/.cask/cask.el")
   (require 'cask))
 (cask-initialize)
 
