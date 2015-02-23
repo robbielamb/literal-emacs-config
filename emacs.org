@@ -225,6 +225,25 @@ We also want magical flychecking to happen.
 
 [[http://lbolla.info/blog/2014/11/19/flycheck-checker-for-javascript-flow][Flycheck emacs integration]] with flow
 
+Enable paredit mode in javascript.
+
+#+name: programming-setup
+#+BEGIN_SRC emacs-lisp
+  (defun lamb-js2-mode-hook ()
+    "Enable paredit mode in javascript"
+    (require 'js)
+
+    (define-key js2-mode-map "{" 'paredit-open-curly)
+    (define-key js2-mode-map "}" 'paredit-close-curly-and-newline)
+
+    (set (make-local-variable 'paredit-space-delimiter-predicates)
+      '((lambda (endp delimiter) nil)))
+    (paredit-mode +1)
+  )
+
+  (add-hook 'js2-mode-hook 'lamb-js2-mode-hook)
+#+END_SRC
+
 ** HTML
 * Auto Complete with Company
 [[https://company-mode.github.io/][Company Mode]] is a pretty good fast auto-complete package with support
