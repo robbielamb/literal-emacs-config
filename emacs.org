@@ -241,7 +241,7 @@ Enable paredit mode in javascript.
     (paredit-mode +1)
   )
 
-  (add-hook 'js2-mode-hook 'lamb-js2-mode-hook)
+  ;;(add-hook 'js2-mode-hook 'lamb-js2-mode-hook)
 #+END_SRC
 
 ** HTML
