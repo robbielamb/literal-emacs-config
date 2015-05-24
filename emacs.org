@@ -1,5 +1,7 @@
 #+TITLE: Robbie's emacs config
 #+AUTHOR: Robbie Lamb
+#+LATEX_CLASS: article
+#+LATEX_CLASS_OPTIONS: [a4paper]
 
 * Configuring Emacs:
   
@@ -67,6 +69,10 @@ None, this should be perfect *smile*.
    #+name: look-and-feel
    #+BEGIN_SRC emacs-lisp
       (when (window-system) 
+        (setq frame-title-format '(buffer-file-name "%f" ("%b")))
+        (tooltip-mode -1)
+        (mouse-wheel-mode t)
+        (blink-cursor-mode -1)
         (tool-bar-mode -1)
         (scroll-bar-mode -1))
    #+END_SRC
@@ -245,6 +251,22 @@ Enable paredit mode in javascript.
 #+END_SRC
 
 ** HTML
+
+** Rust
+  Rust-mode should auto load, but we have racer installed for some
+  auto-complete goodness.
+
+  #+name: programming-setup
+  #+BEGIN_SRC emacs-lisp
+    (if (and (file-exists-p "~/Projects/rust/src")
+             (file-exists-p "~/Projects/racer/target/release/racer"))
+      (print "Found the stuff."))
+    (setq racer-rust-src-path "~/Projects/rust/src")
+    (setq racer-cmd "~/Projects/racer/target/release/racer")
+    (add-to-list 'load-path "~/Projects/racer/editors")
+    (eval-after-load "rust-mode" '(require 'racer))
+  #+END_SRC
+
 * Auto Complete with Company
 [[https://company-mode.github.io/][Company Mode]] is a pretty good fast auto-complete package with support
 for many languages. It's currently only enabled in the 'Go Config'
@@ -285,23 +307,32 @@ Regex searches by default.
   (global-set-key (kbd "C-M-%") 'query-replace)
 #+END_SRC
 
-Other stuffs to go through
 
+Jump to a definition in the current file. (Protip: this is awesome.)
 #+name: key-bindings
 #+BEGIN_SRC emacs-lisp
-  ;; Jump to a definition in the current file. (Protip: this is awesome.)
+
   (global-set-key (kbd "C-x C-i") 'imenu)
 
   ;; File finding
   (global-set-key (kbd "C-x M-f") 'ido-find-file-other-window)
   (global-set-key (kbd "C-c y") 'bury-buffer)
   (global-set-key (kbd "C-c r") 'revert-buffer)
+#+END_SRC
 
-  ;; Window switching. (C-x o goes to the next window)
+Move through the open windows. (C-x o goes to the next window).
+
+#+name: key-bindings
+#+BEGIN_SRC emacs-lisp
   (windmove-default-keybindings) ;; Shift+direction
   (global-set-key (kbd "C-x O") (lambda () (interactive) (other-window -1))) ;; back one
   (global-set-key (kbd "C-x C-o") (lambda () (interactive) (other-window 2))) ;; forward two
+#+END_SRC
 
+Other stuffs to go through
+
+#+name: key-bindings
+#+BEGIN_SRC emacs-lisp
   ;; Start eshell or switch to it if it's active.
   (global-set-key (kbd "C-x m") 'eshell)
   
@@ -310,10 +341,16 @@ Other stuffs to go through
 
   ;; Start a regular shell if you prefer that.
   (global-set-key (kbd "C-x C-m") 'shell)
+#+END_SRC
 
+#+name: key-bindings
+#+BEGIN_SRC emacs-lisp
   ;; If you want to be able to M-x without meta (phones, etc)
   (global-set-key (kbd "C-c x") 'execute-extended-command)
+#+END_SRC
 
+#+name: key-bindings
+#+BEGIN_SRC emacs-lisp
   ;; Help should search more than just commands
   (define-key 'help-command "a" 'apropos)
 
@@ -322,7 +359,10 @@ Other stuffs to go through
 
   ;; M-S-6 is awkward
   (global-set-key (kbd "C-c q") 'join-line)
-  
+  #+END_SRC
+
+#+name: key-bindings
+#+BEGIN_SRC emacs-lisp
   ;; So good!
   (global-set-key (kbd "C-c g") 'magit-status)
 
@@ -334,7 +374,10 @@ Other stuffs to go through
              (vc-register)
            (shell-command (format "git add %s" buffer-file-name))
            (message "Staged changes.")))))
+#+END_SRC
 
+#+name: key-bindings
+#+BEGIN_SRC emacs-lisp
   ;; Activate occur easily inside isearch
   (define-key isearch-mode-map (kbd "C-o")
     (lambda () (interactive)
@@ -556,7 +599,7 @@ already running.
   #+END_SRC
 
 * Configuration File Layout
-  I'm not sure what this does. Lets try and find out.
+This defines the layout on the generated emacs.el file.
 
     #+BEGIN_SRC emacs-lisp :tangle yes :noweb no-export :exports code
       ;;;; Do not modify this file by hand.  It was automatically generated
