@@ -212,9 +212,10 @@ Configuration for the go language.
 #+END_SRC
 
 Oracle mode is pretty nice for looking at go code.
+
 #+name: programming-setup
 #+BEGIN_SRC emacs-lisp
-  (load-file "$GOPATH/src/golang.org/x/tools/cmd/oracle/oracle.el")
+  (load-file "/home/lamb/Projects/gocode/src/golang.org/x/tools/cmd/oracle/oracle.el")
   (go-oracle-mode)
 #+END_SRC
 
@@ -252,6 +253,16 @@ Enable paredit mode in javascript.
 
 ** HTML
 
+** Dart
+Dart mode should be installed. Setup on-the-fly syntax checking
+through flycheck.
+
+#+name: programming-setup
+#+BEGIN_SRC emacs-lisp
+  (setq dart-enable-analysis-server t)
+  (add-hook 'dart-mode-hook 'flycheck-mode)
+#+END_SRC
+
 ** Rust
   Rust-mode should auto load, but we have racer installed for some
   auto-complete goodness.
@@ -263,7 +274,7 @@ Enable paredit mode in javascript.
       (print "Found the stuff."))
     (setq racer-rust-src-path "~/Projects/rust/src")
     (setq racer-cmd "~/Projects/racer/target/release/racer")
-    (add-to-list 'load-path "~/Projects/racer/editors")
+    (add-to-list 'load-path "/home/lamb/Projects/racer/editors/emacs")
     (eval-after-load "rust-mode" '(require 'racer))
   #+END_SRC
 
