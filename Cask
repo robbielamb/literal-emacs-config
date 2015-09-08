@@ -1,7 +1,6 @@
 (source gnu)
 (source melpa)
 
-(depends-on "auto-complete")
 (depends-on "bison-mode")
 (depends-on "cask")
 (depends-on "cl-lib")
@@ -62,6 +61,7 @@
 (depends-on "python-pep8")
 (depends-on "python-pylint")
 (depends-on "queue")
+(depends-on "racer")
 (depends-on "rainbow-delimiters")
 (depends-on "rainbow-identifiers")
 (depends-on "rainbow-mode")
@@ -81,6 +81,7 @@
 (depends-on "starter-kit")
 (depends-on "toml-mode")
 (depends-on "undo-tree")
+(depends-on "with-editor")
 (depends-on "yaml-mode")
 (depends-on "yas-jit")
 (depends-on "yascroll")

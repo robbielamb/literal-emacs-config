@@ -272,16 +272,25 @@ through flycheck.
     (if (and (file-exists-p "~/Projects/rust/src")
              (file-exists-p "~/Projects/racer/target/release/racer"))
       (print "Found the stuff."))
-    (setq racer-rust-src-path "~/Projects/rust/src")
     (setq racer-cmd "~/Projects/racer/target/release/racer")
-    (add-to-list 'load-path "/home/lamb/Projects/racer/editors/emacs")
-    (eval-after-load "rust-mode" '(require 'racer))
+    (setq racer-rust-src-path "~/Projects/rust/src")
+
+    (add-hook `rust-mode-hook #'racer-mode)
+    (add-hook `racer-mode-hook #'eldoc-mode)
+    
+    (add-hook 'racer-mode-hook #'company-mode)
+
   #+END_SRC
 
 * Auto Complete with Company
 [[https://company-mode.github.io/][Company Mode]] is a pretty good fast auto-complete package with support
-for many languages. It's currently only enabled in the 'Go Config'
+for many languages. It's currently enabled with go and rust.
 
+    #+name: programming-setup
+    #+BEGIN_SRC emacs-lisp
+      (global-set-key (kbd "TAB") #'company-indent-or-complete-common) ;
+      (setq company-tooltip-align-annotations t)
+    #+END_SRC
 * Key Bindings
 
 Allow for quick finding of files in a project.
